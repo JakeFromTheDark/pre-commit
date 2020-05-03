@@ -9,5 +9,4 @@ Add this to your `.pre-commit-config.yaml` under the `repos` list:
       - id: npm-groovy-lint
 ```
 Requirements:
-* installed `npm`, `java`
-* installed `npm-groovy-lint` binary in the PATH
+* `java`, `npm-groovy-lint`
