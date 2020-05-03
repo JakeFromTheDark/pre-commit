@@ -4,4 +4,3 @@
   entry: hooks/npm-groovy-lint
   language: script
   types: [text, groovy]
-  args: [--noserver]
