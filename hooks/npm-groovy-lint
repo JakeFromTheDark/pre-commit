@@ -1,18 +1,13 @@
-#! /usr/bin/env node
-"use strict";
+#!/bin/sh
+set -eu
 
-const NpmGroovyLint = require("./groovy-lint.js");
+################################################################################
+# Lint Groovy code.
+################################################################################
 
-// Create linter/formatter/fixer with arguments
-const linter = new NpmGroovyLint(process.argv, { origin: "index" });
+readonly DEBUG=${DEBUG:-unset}
+if [ "${DEBUG}" != unset ]; then
+  set -x
+fi
 
-// Run asynchronously to use the returned status for process.exit
-(async () => {
-    try {
-        await linter.run();
-        process.exit(linter.status);
-    } catch (err) {
-        console.error(err);
-        process.exit(1);
-    }
-})();
+npm-groovy-lint --noserver "$@"
