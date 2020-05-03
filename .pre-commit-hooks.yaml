@@ -1,0 +1,7 @@
+---
+- id: npm-groovy-lint
+  name: Lint Groovy code
+  entry: hooks/npm-groovy-lint
+  language: script
+  types: [text, groovy]
+  args: [--noserver]
