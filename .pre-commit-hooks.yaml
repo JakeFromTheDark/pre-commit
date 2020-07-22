@@ -7,7 +7,15 @@
 
 - id: terraform_validate
   name: Lint Terraform templates
-  entry: hooks/tf_validate.sh
+  entry: hooks/terraform_validate.sh
+  language: script
+  files: \.tf$
+  exclude: \.terraform\/
+  types: [file, text, terraform]
+
+- id: terraform_format
+  name: Format Terraform templates
+  entry: hooks/terraform_format.sh
   language: script
   files: \.tf$
   exclude: \.terraform\/
