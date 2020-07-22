@@ -4,3 +4,10 @@
   entry: hooks/npm-groovy-lint
   language: script
   types: [text, groovy]
+
+- id: terraform_validate
+  name: Lint Terraform templates
+  entry: hooks/tf_validate.sh
+  language: script
+  files: \.tf$
+  exclude: \.terraform\/
