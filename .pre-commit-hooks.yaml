@@ -11,3 +11,4 @@
   language: script
   files: \.tf$
   exclude: \.terraform\/
+  types: [file, text, terraform]
