@@ -2,6 +2,7 @@
 
 declare -a options=()
 declare -a dirs=()
+declare retcode=0
 
 # get options and dirs
 for arg; do
@@ -12,10 +13,8 @@ for arg; do
 done
 
 # run validator for each unique dir
-for dir in "${dirs[@]}"; do
-  echo "${dir}"
-done \
-| sort -u \
-| while read -r; do
-  terraform validate "${options[@]}" "${REPLY}"
-done
+while read -r; do
+  terraform validate "${options[@]}" "${REPLY}" || retcode=$?
+done <<<"$(for dir in "${dirs[@]}"; do echo "${dir}"; done | sort -u)"
+
+exit "${retcode}"
