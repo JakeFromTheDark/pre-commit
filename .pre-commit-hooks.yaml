@@ -22,3 +22,9 @@
   files: \.tf(vars)?$
   exclude: \.terraform\/
   types: [file, text, terraform]
+
+- id: cf-doc
+  name: Generate docs from CloudFormation templates
+  entry: hooks/cf-doc.sh
+  language: script
+  types: [text, yaml]

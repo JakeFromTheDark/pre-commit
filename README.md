@@ -32,3 +32,14 @@ Add this to your `.pre-commit-config.yaml` under the `repos` list:
 ```
 Requirements:
 * `terraform`
+
+## Using `cf-doc` with pre-commit
+Add this to your `.pre-commit-config.yaml` under the `repos` list:
+```
+  - repo: https://github.com/JakeFromTheDark/pre-commit-hooks
+    rev: master
+    hooks:
+      - id: cf-doc
+```
+Requirements:
+* `cf-doc`
