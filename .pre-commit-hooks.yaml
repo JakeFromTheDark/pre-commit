@@ -1,7 +1,7 @@
 ---
 - id: npm-groovy-lint
   name: Lint Groovy code
-  entry: hooks/npm-groovy-lint
+  entry: npm-groovy-lint --noserver
   language: script
   types: [text, groovy]
 
@@ -33,3 +33,21 @@
   name: Debug pre-commit hook calls
   entry: hooks/debug.sh
   language: script
+
+- id: doctoc
+  name: Generates Table Of Contents in Markdown files
+  entry: doctoc
+  language: script
+  types: [markdown]
+
+- id: markdownlint
+  name: Lint with markdownlint
+  entry: markdownlint
+  language: script
+  types: [markdown]
+
+- id: dockerfile_lint
+  name: Lint Dockefile with dockerfile_lint
+  entry: dockerfile_lint --dockerfile
+  language: script
+  types: [dockerfile]
