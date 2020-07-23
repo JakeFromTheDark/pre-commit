@@ -40,6 +40,9 @@ Add this to your `.pre-commit-config.yaml` under the `repos` list:
     rev: master
     hooks:
       - id: cf-doc
+        args: [--outputdir, cfn-doc, --format, markdown, --verbose]
 ```
+Optinal option `--format` can have values of `json`, `markdown` or `md`, by default `markdown`. The mandatory option `--outputdir` expects a dir prefix for resulted dir tree. File paths under the output dir is the same as input files and the output files have the same names except the extensions driven by the `--format`.
+
 Requirements:
 * `cf-doc`
