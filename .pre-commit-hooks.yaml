@@ -1,7 +1,7 @@
 ---
 - id: npm-groovy-lint
   name: Lint Groovy code
-  entry: npm-groovy-lint --noserver
+  entry: /usr/bin/npm-groovy-lint --noserver
   language: script
   types: [text, groovy]
 
