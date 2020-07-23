@@ -36,18 +36,18 @@
 
 - id: doctoc
   name: Generates Table Of Contents in Markdown files
-  entry: doctoc
+  entry: /usr/bin/doctoc
   language: script
   types: [markdown]
 
 - id: markdownlint
   name: Lint with markdownlint
-  entry: markdownlint
+  entry: /usr/bin/markdownlint
   language: script
   types: [markdown]
 
 - id: dockerfile_lint
   name: Lint Dockefile with dockerfile_lint
-  entry: dockerfile_lint --dockerfile
+  entry: /usr/bin/dockerfile_lint --dockerfile
   language: script
   types: [dockerfile]
