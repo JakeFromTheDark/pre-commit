@@ -28,3 +28,8 @@
   entry: hooks/cf-doc.sh
   language: script
   types: [text, yaml]
+
+- id: debug
+  name: Debug pre-commit hook calls
+  entry: hooks/debug.sh
+  language: script
