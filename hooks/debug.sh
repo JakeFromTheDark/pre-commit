@@ -6,6 +6,6 @@ for arg; do
   i="$(( i + 1 ))"
   echo "  arg $i: ${arg}"
 done
-set
+echo
 
 exit 0
