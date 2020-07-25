@@ -51,3 +51,9 @@
   entry: /usr/bin/dockerfile_lint --dockerfile
   language: script
   types: [dockerfile]
+
+- id: ansible_playbook
+  name: Ansible playbook syntax check
+  entry: hooks/ansible-playbook.sh
+  language: script
+  types: [yaml]
