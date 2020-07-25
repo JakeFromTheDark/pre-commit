@@ -57,3 +57,9 @@
   entry: hooks/ansible-playbook.sh
   language: script
   types: [yaml]
+
+- id: ansible_lint
+  name: Lint Ansible
+  entry: /usr/local/bin/ansible-lint
+  language: script
+  types: [yaml]
