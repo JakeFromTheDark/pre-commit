@@ -71,3 +71,22 @@
   entry: /usr/local/bin/pycodestyle
   language: script
   types: [python]
+
+- id: cfn-lint
+  name: AWS CloudFormation Linter
+  entry: /usr/local/bin/cfn-lint
+  language: script
+  types: [yaml, json]
+
+- id: pylint
+  name: pylint
+  entry: /usr/local/bin/pylint
+  language: script
+  types: [python]
+  require_serial: true
+
+- id: yamllint
+  name: yamllint
+  entry: /usr/local/bin/yamllint
+  language: script
+  types: [yaml]
