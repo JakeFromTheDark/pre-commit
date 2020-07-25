@@ -1,38 +1,14 @@
 ---
-- id: npm-groovy-lint
-  name: Lint Groovy code
-  entry: /usr/bin/npm-groovy-lint --noserver
-  language: script
-  types: [text, groovy]
-
-- id: terraform_validate
-  name: Lint Terraform templates
-  description: Validates all Terraform configuration files.
-  entry: hooks/terraform_validate.sh
-  language: script
-  files: \.tf(vars)?$
-  exclude: \.terraform\/
-  types: [file, text, terraform]
-
-- id: terraform_format
-  name: Format Terraform templates
-  description: Rewrites all Terraform configuration files to a canonical format.
-  entry: hooks/terraform_format.sh
-  language: script
-  files: \.tf(vars)?$
-  exclude: \.terraform\/
-  types: [file, text, terraform]
-
-- id: cf-doc
-  name: Generate docs from CloudFormation templates
-  entry: hooks/cf-doc.sh
-  language: script
-  types: [text, yaml]
-
 - id: debug
   name: Debug pre-commit hook calls
   entry: hooks/debug.sh
   language: script
+
+- id: npm-groovy-lint
+  name: Lint Groovy code
+  entry: /usr/bin/npm-groovy-lint --noserver
+  language: script
+  types: [groovy]
 
 - id: doctoc
   name: Generates Table Of Contents in Markdown files
@@ -52,6 +28,32 @@
   language: script
   types: [dockerfile]
 
+- id: cf-doc
+  name: Generate docs from CloudFormation templates
+  entry: hooks/cf-doc.sh
+  language: script
+  types: [text, yaml]
+
+- id: terraform_validate
+  name: Lint Terraform templates
+  description: Validates all Terraform configuration files.
+  entry: hooks/terraform_validate.sh
+  language: script
+  files: \.tf(vars)?$
+  exclude: (^|/)\.terraform\/
+  types: [terraform]
+  require_serial: true
+
+- id: terraform_format
+  name: Format Terraform templates
+  description: Rewrites all Terraform configuration files to a canonical format.
+  entry: hooks/terraform_format.sh
+  language: script
+  files: \.tf(vars)?$
+  exclude: (^|/)\.terraform\/
+  types: [terraform]
+  require_serial: true
+
 - id: ansible_playbook
   name: Ansible playbook syntax check
   entry: hooks/ansible-playbook.sh
@@ -63,3 +65,9 @@
   entry: /usr/local/bin/ansible-lint
   language: script
   types: [yaml]
+
+- id: pycodestyle
+  name: Style guide checker of Python code
+  entry: /usr/local/bin/pycodestyle
+  language: script
+  types: [python]
